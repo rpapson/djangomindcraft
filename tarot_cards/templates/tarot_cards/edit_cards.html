@@ -1,0 +1,54 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+<head>
+  <link rel="stylesheet" href="{% static 'tarot_cards/custom.css' %}">
+</head>
+
+{% block content %}
+
+<div class="container">
+
+    <div class="row">
+      <div class="col">
+
+      </div>
+      <div class="col  myform">
+        <form method="POST">
+          {% csrf_token %}
+          {{form.as_p}}
+          <input type="submit">
+        </form>
+        <!-- <div class="card" style="width: 18rem;">
+          <center><h5 class="card-title">{{title}}</h5></center>
+          <p class="card-text">{{src}}</p>
+            <div class="card-body">
+   
+              <p class="card-text">{{text}}</p>
+              <a href="#" class="btn btn-primary">Submit</a>
+            </div>
+          </div> -->
+      </div>
+
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <center><h5 class="card-title">{{title}}</h5></center>
+            <img src="{{src}}" class="card-img-top" alt="...">
+            <div class="card-body">
+   
+              <p class="card-text">{{text|safe}}</p>
+              <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+            </div>
+          </div>
+      </div>
+      <div class="col">
+
+      </div>
+    </div>
+
+  </div>
+
+
+{% endblock content %}
+    
