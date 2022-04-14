@@ -12,10 +12,25 @@
         
     <div class="col">
       <div class="card" style="border-radius: 15px;box-shadow: -5px 5px 10px white">
-        <center><h5 class="card-title">{{card.title}}</h5><h6>{{card.tag}}</h6>
+        <center><h5 class="card-title">{{card.title}}</h5>
         <img src="{{card.src}}" class="card-img-top" style = "width:90%" alt="..."></center>
         <div class="card-body">
-          <p class="card-text">{{card.text|safe}}</p>
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        {{card.tag}} see more
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      {{card.text|safe}}
+                    </div>
+                  </div>
+                </div>
+
+            </div>
+
         </div>
       </div>
     </div>

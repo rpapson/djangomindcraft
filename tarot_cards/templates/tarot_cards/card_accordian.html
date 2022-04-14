@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container">
+
+    <div class="row">
+      <div class="col">
+      </div>
+      <div class="col">
+
+        <div class="card" style="border-radius: 15px;box-shadow: -5px 5px 10px white;width: 18rem">
+            <center><h5 class="card-title">{{title}}</h5>
+            <img src="{{src}}" class="card-img-top" style = "width:90%" alt="..."></center>
+            <div class="card-body">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                             short tagline text
+                        </button>
+                      </h2>
+                      <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          {{text|safe}}
+                        </div>
+                      </div>
+                    </div>
+    
+                </div>
+    
+            </div>
+          </div>
+          
+</div>
+          <div class="col">
+          </div>
+      </div>
+    </div>
+
+  
+
+
+{% endblock content %}
